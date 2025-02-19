@@ -10,8 +10,8 @@ led = machine.Pin("LED", machine.Pin.OUT)  # LED integrado en la Raspberry Pi Pi
 
 def Envio_TXT(DATOS):
     # Abrir el archivo en modo lectura
-    with open(DATOS, 'r') as Datos_Random:
-        mensaje = Datos_Random.read()  # Leer todo el contenido del archivo
+    with open(100_lineas_60caracteres, 'r') as Archivo_Random:
+        mensaje = Archivo_Random.read()  # Leer todo el contenido del archivo
         led.on()  # Encender el LED
         uart.write(mensaje)  # Enviar el contenido por UART
         utime.sleep(2)  # Esperar 2 segundos para asegurar que todos los datos sean enviados
@@ -19,4 +19,4 @@ def Envio_TXT(DATOS):
         print("Archivo enviado")
 
 # Llamar a la función para enviar el archivo
-Envio_TXT('DATOS.txt')
+Envio_TXT('100_lineas_60caracteres.txt')
