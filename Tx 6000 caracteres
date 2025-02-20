@@ -14,7 +14,7 @@ def Envio_TXT(DATOS):
         mensaje = Archivo_Random.read()  # Leer todo el contenido del archivo
         led.on()  # Encender el LED
         uart.write(mensaje)  # Enviar el contenido por UART
-        utime.sleep(2)  # Esperar 2 segundos para asegurar que todos los datos sean enviados
+        utime.sleep(0.1)  # Espera 0.1 segundos para asegurar los datos enviados 
         led.off()  # Apagar el LED
         print("Archivo enviado")
 
